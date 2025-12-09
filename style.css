@@ -1,0 +1,263 @@
+/* --- VARIASI WARNA (PALET DESAIN) --- */
+:root {
+    --color-blue-dark: #244093; /* Warna Biru Latar */
+    --color-green-light: #79d02c; /* Hijau Teks Portofolio */
+    --color-red-box: #ea4859; /* Merah Kotak/Tombol */
+    --color-yellow-shadow: #f0c33a; /* Kuning Shadow/Highlight */
+    --color-white: #ffffff;
+    --color-black: #000000;
+}
+
+/* --- GLOBAL STYLES & LAYOUT DASAR --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-blue-dark);
+    color: var(--color-white);
+    /* Font Fallback: Gunakan font tebal yang tersedia atau link font eksternal */
+    font-family: 'Impact', 'Bebas Neue', 'Arial Black', sans-serif; 
+}
+
+/* --- STYLES SECTION UMUM --- */
+.section-container {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+/* Pewarnaan Highlight Konsisten */
+.highlight-green { color: var(--color-green-light); }
+.highlight-yellow { color: var(--color-yellow-shadow); }
+.highlight-red { color: var(--color-red-box); }
+
+/* --- BAGIAN 1: HEADER/COVER (porto.jpg) --- */
+
+.header-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-size: 8rem; 
+    line-height: 0.8; 
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+
+.title span {
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--color-green-light);
+    
+    /* Efek Stroke Putih dan Shadow Hitam */
+    text-shadow: 
+        -3px -3px 0 var(--color-white), 3px -3px 0 var(--color-white),
+        -3px 3px 0 var(--color-white), 3px 3px 0 var(--color-white),
+        10px 10px 0 rgba(0, 0, 0, 0.7);
+}
+
+.word1 { transform: rotate(-3deg); }
+.word2 { transform: rotate(2deg); margin-top: -15px; }
+
+.name-box {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--color-white);
+    background-color: var(--color-red-box);
+    padding: 10px 30px;
+    display: inline-block;
+    
+    /* Efek 3D/Shadow Kuning */
+    box-shadow: 
+        0px 0px 0 5px var(--color-yellow-shadow), 
+        0px 5px 0 5px var(--color-yellow-shadow), 
+        0px 10px 0 5px rgba(0, 0, 0, 0.5); 
+}
+
+/* --- BAGIAN 2: TENTANG SAYA (porto1.jpg) --- */
+
+.subtitle {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    /* Efek stroke hitam */
+    text-shadow: 
+        -2px -2px 0 var(--color-black), 2px -2px 0 var(--color-black),
+        -2px 2px 0 var(--color-black), 2px 2px 0 var(--color-black); 
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif; /* Teks paragraf lebih baik menggunakan font standar */
+    font-weight: bold;
+}
+
+/* Tombol Merah */
+.main-button {
+    background-color: var(--color-red-box);
+    color: var(--color-white);
+    border: 3px solid var(--color-white);
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0px 5px 0 0 rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.main-button:hover {
+    transform: translateY(2px);
+    box-shadow: 0px 3px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+/* --- BAGIAN 3: KEGIATAN/PROYEK (porto2.jpg & porto3.jpg) --- */
+
+.project-cards-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    margin-bottom: 30px; /* Jarak antar baris kartu */
+    flex-wrap: wrap; 
+}
+
+.projects-section .project-cards-container:last-of-type {
+    margin-bottom: 50px; /* Jarak antara kartu baris terakhir dan deskripsi */
+}
+
+.project-card {
+    width: 300px; 
+    max-width: 100%;
+    text-align: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 180px; 
+    background-color: var(--color-blue-dark); 
+    border: 5px solid var(--color-white); 
+    margin-bottom: 15px;
+    box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.card-caption {
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    display: inline-block;
+    color: var(--color-black); 
+}
+
+.caption-red { background-color: #ff0000; }
+.caption-green { background-color: #00ff00; }
+.caption-yellow { background-color: #ffff00; }
+
+.project-description {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+/* --- BAGIAN 4: KONTAK (porto4.jpg) --- */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-message {
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.contact-item p {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.contact-item p:first-child,
+.contact-item p:last-child {
+    font-size: 1.1rem;
+    display: inline-block;
+    background-color: var(--color-white); 
+    color: var(--color-black);
+    padding: 2px 5px;
+}
+
+.contact-item p:last-child {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-left: 10px;
+}
+
+.contact-details hr {
+    border: none;
+    border-top: 1px solid var(--color-white);
+    margin: 20px 0;
+}
+
+
+/* --- MEDIA QUERIES (RESPONSIVITAS) --- */
+
+@media (max-width: 1200px) {
+    .title { font-size: 6rem; }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 4rem;
+        margin-bottom: 30px;
+    }
+
+    .subtitle { font-size: 3rem; }
+    
+    .name-box {
+        font-size: 1.2rem;
+        padding: 8px 20px;
+    }
+
+    .project-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card { width: 80%; }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .contact-message { font-size: 1.8rem; }
+    
+    .contact-item { margin: 10px 0; }
+    
+    /* Mengatur item kontak agar tidak inline di mobile */
+    .contact-item p {
+        display: block !important; 
+        margin: 5px auto;
+        width: fit-content;
+    }
+}
